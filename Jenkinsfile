@@ -60,12 +60,12 @@ pipeline {
                     git config --global user.email "ya81301@gmail.com"
                     git add deployment.yml
                     git commit -m 'Updated the deployment file' """
-                    withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                        sh "git push https://github.com/YasserAhmedMoh/gitops-demo.git master"
-                    }
-                   // withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                   //     sh "git push https://$user:$pass@github.com/YasserAhmedMoh/gitops-demo.git master"
+                    //withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                    //    sh "git push https://github.com/YasserAhmedMoh/gitops-demo.git master"
                    // }
+                    withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                        sh "git push https://${user}:${pass}@github.com/YasserAhmedMoh/gitops-demo.git master"
+                    }
                 }
             }
         }
