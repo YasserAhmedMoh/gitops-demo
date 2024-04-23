@@ -63,9 +63,9 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'user')]) {
                         sh "git push https://github.com/YasserAhmedMoh/gitops-demo.git master"
                     }
-                    withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                        sh "git push https://$user:$pass@github.com/YasserAhmedMoh/gitops-demo.git master"
-                    }
+                   // withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'user')]) {
+                   //     sh "git push https://$user:$pass@github.com/YasserAhmedMoh/gitops-demo.git master"
+                   // }
                 }
             }
         }
