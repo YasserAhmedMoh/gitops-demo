@@ -61,7 +61,7 @@ pipeline {
                     git add deployment.yml
                     git commit -m 'Updated the deployment file' """
                     withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                        sh "git push https://github.com/YasserAhmedMoh/gitops-demo.git"
+                        sh "git push https://github.com/YasserAhmedMoh/gitops-demo.git master"
                     }
                 }
             }
